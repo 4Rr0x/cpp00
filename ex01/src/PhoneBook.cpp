@@ -87,7 +87,7 @@ void PhoneBook::searchContacts() const {
 
 		std::cout << "Please select an Index to display more information" << std::endl;
 		std::cout << "Select 0 to return to the main menu" << std::endl;
-		if (!(std::cin >> index), index + 1 < 0 || index + 1 > 8 || contacts[index].getFirstName().empty()) {
+		if (!(std::cin >> index), index + 1 < 0 || index + 1 > 8 || contacts[index - 1].getFirstName().empty()) {
 			std::cout << "\033[2J\033[1;1H";
 			std::cout << "Invalid index. Please enter a valid index!!! " << std::endl << std::endl;
 			std::cin.clear();
@@ -99,10 +99,9 @@ void PhoneBook::searchContacts() const {
 		}
 	}
 
-
+	std::cout << "\033[2J\033[1;1H";
 	if (index == 0)
 		return;
-	std::cout << "\033[2J\033[1;1H";
 	const Contact& display = contacts[index - 1];
 	std::cout << "First Name:" << display.getFirstName() << std::endl;
 	std::cout << "Last Name:" << display.getLastName() << std::endl;
