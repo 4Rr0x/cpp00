@@ -16,6 +16,7 @@
 # include "Contact.hpp"
 # include <cstdlib>
 # include <limits>
+# include <iomanip>
 
 class PhoneBook {
 	
@@ -26,7 +27,7 @@ class PhoneBook {
 	public:
 		PhoneBook();
 
-		void addContact(const Contact& contact);
+		void addContact();
 		void searchContacts() const;
 };
 

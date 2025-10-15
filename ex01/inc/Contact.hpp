@@ -23,9 +23,10 @@ class Contact {
 		std::string phoneNumber;
 
 	public:
-		setFirstName(const std::string& fName);
-		setLastName(const std::string& lName);
-		setPhoneNumber(const std::string& pNumber);
+		Contact();
+		void setFirstName(const std::string& fName);
+		void setLastName(const std::string& lName);
+		void setPhoneNumber(const std::string& pNumber);
 
 		std::string getFirstName() const;
 		std::string getLastName() const;

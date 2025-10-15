@@ -1,7 +1,19 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jopedro- <jopedro-@student.42porto.com>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/13 14:45:32 by jopedro-          #+#    #+#              #
+#    Updated: 2025/10/13 17:25:46 by jopedro-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 #==============================================================================#
 #                                     NAMES                                    #
 #==============================================================================#
-NAME = megaphone
+NAME = PhoneBook
 
 _SUCCESS 		= [$(GRN)SUCCESS$(D)]
 _INFO 			= [$(BLU)INFO$(D)]
@@ -14,11 +26,14 @@ _SEP 			= =====================
 #==============================================================================#
 #                                    PATHS                                     #
 #==============================================================================#
-SRC_PATH		= .
+SRC_PATH		= src
 BUILD_PATH		= .build
 TEMP_PATH		= .temp
 
-SRC				= megaphone.cpp
+SRC				= $(SRC_PATH)/Contact.cpp
+SRC				+= $(SRC_PATH)/PhoneBook.cpp
+SRC				+= main.cpp
+
 OBJS			= $(SRC:$(SRC_PATH)/%.cpp=$(BUILD_PATH)/%.o)
 
 #==============================================================================#
@@ -43,12 +58,9 @@ $(NAME): $(OBJS)
 	@echo "[$(_SUCCESS) compiling $(MAG)megaphone!$(D) $(YEL)🖔$(D)]"
 
 $(BUILD_PATH)/%.o: $(SRC_PATH)/%.cpp
+	@mkdir -p .build
 	@echo -n "$(MAG)█$(D)"
-	$(CXX) $(CXXFLAGS) $(DFLAGS) -MMD -MP -c $< -o $@
-
-$(BUILD_PATH):
-	$(MKDIR_P) $(BUILD_PATH)
-	@echo "* $(YEL)Creating $(BUILD_PATH) folder:$(D) $(_SUCCESS)"
+	$(CXX) $(CXXFLAGS) $(DFLAGS) -c $< -o $@
 
 -include $(BUILD_PATH)/*.d
 

@@ -33,7 +33,9 @@ int main() {
 		   ph.searchContacts();
 		else if (input == "EXIT")
 		   exit(0);
-		else
+		else {
+			std::cout << "\033[2J\033[1;1H";
 			std::cerr << "Please input a valid option" << std::endl << std::endl;
+		}
 	}
 }
