@@ -6,7 +6,7 @@
 #    By: jopedro- <jopedro-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 14:31:25 by jopedro-          #+#    #+#              #
-#    Updated: 2025/10/13 14:41:24 by jopedro-         ###   ########.fr        #
+#    Updated: 2025/10/22 12:31:28 by jopedro-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ $(BUILD_PATH):
 
 clean:
 	@echo "* $(YEL)Removing $(MAG)$(NAME)$(D) and deps $(YEL)object files$(D)"
-	$(RM) $(BUILD_PATH)
+	rm -rf $(BUILD_PATH)
 	@echo "* $(YEL)Removing $(CYA)$(BUILD_PATH)$(D) folder & files$(D): $(_SUCCESS)"
 
 fclean: clean
