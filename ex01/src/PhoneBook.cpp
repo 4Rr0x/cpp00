@@ -6,7 +6,7 @@
 /*   By: jopedro- <jopedro-@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 16:40:18 by jopedro-          #+#    #+#             */
-/*   Updated: 2025/10/13 16:57:09 by jopedro-         ###   ########.fr       */
+/*   Updated: 2025/10/15 17:46:31 by jopedro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,10 @@ void PhoneBook::searchContacts() const {
 		}
 
 		std::cout << "Please select an Index to display more information" << std::endl;
+		if (index == 0) {
+			std::cout << "\033[2J\033[1;1H";
+			return;
+		}
 		std::cout << "Select 0 to return to the main menu" << std::endl;
 		if (!(std::cin >> index), index + 1 < 0 || index + 1 > 8 || contacts[index - 1].getFirstName().empty()) {
 			std::cout << "\033[2J\033[1;1H";
@@ -100,8 +104,6 @@ void PhoneBook::searchContacts() const {
 	}
 
 	std::cout << "\033[2J\033[1;1H";
-	if (index == 0)
-		return;
 	const Contact& display = contacts[index - 1];
 	std::cout << "First Name:" << display.getFirstName() << std::endl;
 	std::cout << "Last Name:" << display.getLastName() << std::endl;

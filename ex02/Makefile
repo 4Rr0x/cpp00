@@ -5,15 +5,15 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jopedro- <jopedro-@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/13 14:45:32 by jopedro-          #+#    #+#              #
-#    Updated: 2025/10/22 12:16:33 by jopedro-         ###   ########.fr        #
+#    Created: 2025/10/20 14:27:38 by jopedro-          #+#    #+#              #
+#    Updated: 2025/10/22 12:17:18 by jopedro-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #==============================================================================#
 #                                     NAMES                                    #
 #==============================================================================#
-NAME = PhoneBook
+NAME = Accounts
 
 _SUCCESS 		= [$(GRN)SUCCESS$(D)]
 _INFO 			= [$(BLU)INFO$(D)]
@@ -30,9 +30,8 @@ SRC_PATH		= src
 BUILD_PATH		= .build
 TEMP_PATH		= .temp
 
-SRC				= $(SRC_PATH)/Contact.cpp
-SRC				+= $(SRC_PATH)/PhoneBook.cpp
-SRC				+= main.cpp
+SRC				= $(SRC_PATH)/Account.cpp
+SRC				+= tests.cpp
 
 OBJS			= $(SRC:$(SRC_PATH)/%.cpp=$(BUILD_PATH)/%.o)
 
