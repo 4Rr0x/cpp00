@@ -21,16 +21,22 @@ class Contact {
 		std::string firstName;
 		std::string lastName;
 		std::string phoneNumber;
+		std::string nickName;
+		std::string darkestSecret;
 
 	public:
 		Contact();
 		void setFirstName(const std::string& fName);
 		void setLastName(const std::string& lName);
 		void setPhoneNumber(const std::string& pNumber);
+		void setNickName(const std::string& nName);
+		void setDarkestSecret(const std::string& dSecret);
 
 		std::string getFirstName() const;
 		std::string getLastName() const;
 		std::string getPhoneNumber() const;
+		std::string getNickName() const;
+		std::string getDarkestSecret() const;
 };
 
 #endif

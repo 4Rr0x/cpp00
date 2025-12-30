@@ -26,6 +26,14 @@ void Contact::setPhoneNumber(const std::string& pnumber){
 	phoneNumber = pnumber;
 }
 
+void Contact::setNickName(const std::string& nName){
+	nickName = nName;
+}
+
+void Contact::setDarkestSecret(const std::string& dSecret){
+	darkestSecret = dSecret;
+}
+
 std::string Contact::getFirstName() const {
 	return firstName;
 }
@@ -36,4 +44,12 @@ std::string Contact::getLastName() const {
 
 std::string Contact::getPhoneNumber() const {
 	return phoneNumber;
+}
+
+std::string Contact::getDarkestSecret() const {
+	return darkestSecret;
+}
+
+std::string Contact::getNickName() const {
+	return nickName;
 }
