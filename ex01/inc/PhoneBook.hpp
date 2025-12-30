@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
-#define PHONEBOOK_CPP
+#define PHONEBOOK_HPP
 
 # include "Contact.hpp"
 # include <cstdlib>
